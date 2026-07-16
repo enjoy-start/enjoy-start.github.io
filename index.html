@@ -3,86 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>我的网络安全学习笔记</title>
+    <title>我的网络安全自学博客</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='90' font-size='90'>学</text></svg>">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: "Microsoft YaHei", sans-serif;
-        }
-        body {
-            background-color: #f5f7fa;
-            padding: 40px 20px;
-        }
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            background: white;
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 2px 12px #ddd;
-        }
-        h1 {
-            color: #222;
-            text-align: center;
-            margin-bottom: 30px;
-            border-bottom: 2px solid #409eff;
-            padding-bottom: 12px;
-        }
-        h2 {
-            color: #333;
-            margin: 24px 0 12px;
-        }
-        p {
-            line-height: 1.8;
-            color: #555;
-            margin-bottom: 10px;
-        }
-        .note-box {
-            background: #f0f7ff;
-            padding: 16px;
-            border-left: 4px solid #409eff;
-            margin: 15px 0;
-            border-radius: 4px;
-        }
-        ul {
-            padding-left: 22px;
-            line-height: 2;
-            color: #444;
-        }
-        footer {
-            margin-top: 40px;
-            text-align: center;
-            color: #999;
-            font-size: 14px;
-        }
+        * {margin:0;padding:0;box-sizing:border-box;font-family:Microsoft YaHei;}
+        body {background:#f3f4f6;color:#333;line-height:1.8;}
+        header {background:#165DFF;padding:16px 40px;box-shadow:0 2px 8px #ccc;}
+        .nav {max-width:1000px;margin:0 auto;display:flex;gap:32px;align-items:center;}
+        .nav a {color:#fff;text-decoration:none;font-size:18px;}
+        .nav a:hover {text-decoration:underline;}
+        .container {max-width:1000px;margin:40px auto;padding:0 20px;}
+        .card {background:#fff;padding:30px;border-radius:10px;box-shadow:0 1px 10px #ddd;margin-bottom:24px;}
+        h1 {margin-bottom:20px;color:#111;}
+        h2 {margin:16px 0 10px;color:#165DFF;}
+        p {margin-bottom:12px;color:#444;}
+        .btn {display:inline-block;margin-top:10px;padding:8px 20px;background:#165DFF;color:#fff;border-radius:6px;text-decoration:none;}
+        .btn:hover {background:#0E4CDB;}
+        footer {text-align:center;margin-top:60px;padding:20px;color:#888;font-size:14px;border-top:1px solid #ddd;}
     </style>
 </head>
 <body>
+    <!-- 导航栏（所有页面共用一套，统一跳转） -->
+    <header>
+        <div class="nav">
+            <a href="index.html">首页</a>
+            <a href="sql-notes.html">SQL注入笔记</a>
+            <a href="xss-notes.html">XSS漏洞笔记</a>
+            <a href="about.html">关于本站</a>
+        </div>
+    </header>
+
     <div class="container">
-        <h1>个人Web安全自学笔记</h1>
-
-        <h2>📖 学习目标</h2>
-        <p>记录SQL注入、Web漏洞相关实操知识点，仅个人学习复盘使用。</p>
-
-        <h2>📌 SQL注入基础笔记</h2>
-        <div class="note-box">
-            <p>1. 数字型注入：无引号包裹，直接拼接 and / union 语句</p>
-            <p>2. 字符型注入：需要闭合单引号/双引号/括号组合符号</p>
-            <p>3. 注释符 --+ 用来屏蔽后端多余SQL代码，避免语法报错</p>
+        <div class="card">
+            <h1>欢迎来到我的网络安全自学博客</h1>
+            <p>这里仅记录个人Web安全、渗透测试自学笔记，所有内容为实操复盘自用，不做商用与违规传播。</p>
+            <h2>近期学习内容</h2>
+            <p>1. SQLi-Labs 1~4关闭合方式总结</p>
+            <p>2. 数字型/字符型注入快速判断方法</p>
+            <p>3. GitHub Pages静态站点部署踩坑记录</p>
         </div>
 
-        <h2>📂 待学习清单</h2>
-        <ul>
-            <li>SQLi-Labs Less1 ~ Less4 闭合方式复盘</li>
-            <li>联合查询脱库完整流程</li>
-            <li>Github Pages 静态站点部署</li>
-        </ul>
-
-        <footer>
-            本页面仅用于个人学习记录，无商用、分享用途
-        </footer>
+        <div class="card">
+            <h2>笔记分类导航</h2>
+            <p>🔍 SQL注入全套学习笔记，包含手工注入完整流程、联合查询语句、闭合符探测步骤</p>
+            <a href="sql-notes.html" class="btn">前往查看</a>
+            <br><br>
+            <p>⚠️ XSS跨站脚本漏洞学习，前端演示靶场原理、漏洞防御方式</p>
+            <a href="xss-notes.html" class="btn">前往查看</a>
+        </div>
     </div>
+
+    <footer>
+        本博客仅个人学习记录 | GitHub Pages 静态博客
+    </footer>
 </body>
 </html>
