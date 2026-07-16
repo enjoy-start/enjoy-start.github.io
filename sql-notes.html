@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>我的网络安全自学博客</title>
+    <title>SQL注入学习笔记</title>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='90' font-size='90'>学</text></svg>">
     <style>
         * {margin:0;padding:0;box-sizing:border-box;font-family:Microsoft YaHei;}
@@ -17,13 +17,11 @@
         h1 {margin-bottom:20px;color:#111;}
         h2 {margin:16px 0 10px;color:#165DFF;}
         p {margin-bottom:12px;color:#444;}
-        .btn {display:inline-block;margin-top:10px;padding:8px 20px;background:#165DFF;color:#fff;border-radius:6px;text-decoration:none;}
-        .btn:hover {background:#0E4CDB;}
+        pre {background:#1a1a1a;color:#0f0;padding:14px;border-radius:6px;overflow-x:auto;margin:12px 0;}
         footer {text-align:center;margin-top:60px;padding:20px;color:#888;font-size:14px;border-top:1px solid #ddd;}
     </style>
 </head>
 <body>
-    <!-- 导航栏（所有页面共用一套，统一跳转） -->
     <header>
         <div class="nav">
             <a href="index.html">首页</a>
@@ -35,21 +33,19 @@
 
     <div class="container">
         <div class="card">
-            <h1>欢迎来到我的网络安全自学博客</h1>
-            <p>这里仅记录个人Web安全、渗透测试自学笔记，所有内容为实操复盘自用，不做商用与违规传播。</p>
-            <h2>近期学习内容</h2>
-            <p>1. SQLi-Labs 1~4关闭合方式总结</p>
-            <p>2. 数字型/字符型注入快速判断方法</p>
-            <p>3. GitHub Pages静态站点部署踩坑记录</p>
-        </div>
+            <h1>SQL注入全套学习笔记</h1>
+            <h2>一、注入点探测步骤（文字可自行修改）</h2>
+            <p>1. 输入?id=1' 观察页面是否报错</p>
+            <p>2. 输入?id=1' --+ 判断是否单引号字符型</p>
+            <p>3. 输入?id=1 and 1=2 判断是否数字型注入</p>
+            <p>4. 单引号无效则测试') / ") 带括号闭合</p>
 
-        <div class="card">
-            <h2>笔记分类导航</h2>
-            <p>🔍 SQL注入全套学习笔记，包含手工注入完整流程、联合查询语句、闭合符探测步骤</p>
-            <a href="sql-notes.html" class="btn">前往查看</a>
-            <br><br>
-            <p>⚠️ XSS跨站脚本漏洞学习，前端演示靶场原理、漏洞防御方式</p>
-            <a href="xss-notes.html" class="btn">前往查看</a>
+            <h2>二、Less1 完整联合查询语句</h2>
+<pre>
+?id=-1' union select 1,database(),3 --+
+</pre>
+            <h2>三、个人实操总结（这里改成你自己的心得）</h2>
+            <p>每次搭建Pages站点会遇到CDN缓存延迟问题，删除仓库后旧页面会留存一天左右，无痕窗口可规避缓存。</p>
         </div>
     </div>
 
