@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XSS漏洞学习笔记</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='90' font-size='90'>学</text></svg>">
+    <style>
+        * {margin:0;padding:0;box-sizing:border-box;font-family:Microsoft YaHei;}
+        body {background:#f3f4f6;color:#333;line-height:1.8;}
+        header {background:#165DFF;padding:16px 40px;box-shadow:0 2px 8px #ccc;}
+        .nav {max-width:1000px;margin:0 auto;display:flex;gap:32px;align-items:center;}
+        .nav a {color:#fff;text-decoration:none;font-size:18px;}
+        .nav a:hover {text-decoration:underline;}
+        .container {max-width:1000px;margin:40px auto;padding:0 20px;}
+        .card {background:#fff;padding:30px;border-radius:10px;box-shadow:0 1px 10px #ddd;margin-bottom:24px;}
+        h1 {margin-bottom:20px;color:#111;}
+        h2 {margin:16px 0 10px;color:#165DFF;}
+        p {margin-bottom:12px;color:#444;}
+        footer {text-align:center;margin-top:60px;padding:20px;color:#888;font-size:14px;border-top:1px solid #ddd;}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="nav">
+            <a href="index.html">首页</a>
+            <a href="sql-notes.html">SQL注入笔记</a>
+            <a href="xss-notes.html">XSS漏洞笔记</a>
+            <a href="about.html">关于本站</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="card">
+            <h1>XSS跨站脚本漏洞笔记</h1>
+            <h2>一、漏洞原理</h2>
+            <p>后端未过滤用户输入，直接将用户提交的JS代码渲染到页面，导致恶意脚本执行，窃取Cookie、劫持页面。</p>
+            <h2>二、基础测试Payload（自行增减）</h2>
+            <p>&lt;script&gt;alert(1)&lt;/script&gt;</p>
+            <h2>三、防御手段</h2>
+            <p>1. 前端转义特殊字符 &lt; &gt; " '</p>
+            <p>2. 后端过滤危险标签与关键字</p>
+            <p>3. 配置CSP内容安全策略</p>
+        </div>
+    </div>
+
+    <footer>
+        本博客仅个人学习记录 | GitHub Pages 静态博客
+    </footer>
+</body>
+</html>
